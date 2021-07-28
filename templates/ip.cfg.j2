@@ -1,0 +1,11 @@
+
+Good news, {{ ansible_user }}! We have another mission to accomplish:
+
+{% if host|lower == "bender" %}
+
+{% elif host |lower == "" %}
+
+{% elif planet|lower == "omicron persei 8" %}
+
+{% else %}
+{% endif %}
