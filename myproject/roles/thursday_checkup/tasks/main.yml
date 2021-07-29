@@ -1,0 +1,21 @@
+---
+# tasks file for thursday_checkup
+- name: Install sl with package
+  hosts: planetexpress
+  tasks:
+    - name: Check if packages are latest
+      package:
+        name: 
+          - sl
+          - cowsay
+          - bestway
+        state: latest
+      become: yes # run as sudo
+
+    - name: Insert a line into log file
+      lineinfile:
+        path: ~/ans/loggy.log
+        line: "{{ ansible_date_time.date }} - Passed Checkup"
+        create: True
+      become: true
+

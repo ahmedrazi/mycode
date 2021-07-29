@@ -1,0 +1,7 @@
+---
+- name: package checkup
+  hosts: planetexpress 
+  gather_facts: yes
+
+  roles:
+    - thursday_checkup
